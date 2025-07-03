@@ -16,15 +16,15 @@
 </div>
 
 
-# 📘 Employee Directory API
+# Employee Directory API
 
 The **Employee Directory API** enables internal teams and systems to retrieve, create, and manage employee records. This is intended for internal use only.
 
 ---
 
-<a name="🔐-authentication"></a>
+<a id="authentication"></a>
 
-## 🔐 Authentication
+## Authentication
 
 All endpoints require a Bearer token from the internal Auth Service.
 
@@ -35,9 +35,9 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 
 ---
 
-<a name="📇-endpoints-summary"></a>
+<a id="endpoints-summary"></a>
 
-## 📇 Endpoints Summary
+## Endpoints Summary
 
 | Method | Endpoint               | Description                          |
 |--------|------------------------|--------------------------------------|
@@ -51,15 +51,15 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 
 ---
 
-<a name="📥-get-`employees`"></a>
+<a id="get-employees"></a>
 
-[<a name="📥-get-`employees`"></a>]: # 
+[<a name="get-`employees`"></a>]: # 
 
-## 📥 GET `/employees`
+## GET `/employees`
 
 Retrieve a paginated list of employees.
 
-#<a name="query-parameters"></a>
+#<a id="query-parameters"></a>
 
 ## Query Parameters
 
@@ -80,7 +80,7 @@ Retrieve a paginated list of employees.
 
 <a name="✅-example-request"></a>
 
-## ✅ Example Request
+## Example Request
 
 ```http
 GET /employees?page=1&limit=2
@@ -95,7 +95,7 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 
 <a name="✅-example-response"></a>
 
-## ✅ Example Response
+## Example Response
 ```json
 {
   "page": 1,
@@ -126,9 +126,9 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 
 ---
 
-<a name="🔍-get-`employeesid`"></a>
+<a id="get-employeesid"></a>
 
-## 🔍 GET `/employees/{id}`
+## GET `/employees/{id}`
 
 Retrieve full details for one employee.
 
@@ -142,7 +142,7 @@ Retrieve full details for one employee.
 
 <a name="✅-example-request"></a>
 
-## ✅ Example Request
+## Example Request
 ```http
 GET /employees/emp_001
 Authorization: Bearer YOUR_ACCESS_TOKEN
@@ -156,7 +156,7 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 
 <a name="✅-example-response"></a>
 
-## ✅ Example Response
+## Example Response
 ```json
 {
   "id": "emp_001",
@@ -176,7 +176,7 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 
 <a name="➕-post-`employees`"></a>
 
-## ➕ POST `/employees`
+## POST `/employees`
 
 Create a new employee.
 
@@ -188,38 +188,38 @@ Create a new employee.
 
 <a name="✅-example-request"></a>
 
-<a name="✅-example-request"></a>
+<a name="example-request"></a>
 
-## ✅ Example Request
+## Example Request
 ```http
 POST /employees
 Authorization: Bearer YOUR_ACCESS_TOKEN
 Content-Type: application/json
 
 {
-  "first_name": "Victor",
-  "last_name": "Adedokun",
-  "email": "victor.adedokun@example.com",
+  "first_name": "John",
+  "last_name": "Doe",
+  "email": "john.doe@example.com",
   "title": "Technical Writer",
   "phone": "+44 123 456 7890",
   "manager_id": "emp_050",
   "department": "Documentation",
-  "location": "Remote",
+  "location": "OnSite",
   "start_date": "2025-07-01"
 }
 ```
 
-#<a name="✅-example-response"></a>
+#<a name="example-response"></a>
 
-<a name="✅-example-response"></a>
+<a name="example-response"></a>
 
-<a name="✅-example-response-(201-created)"></a>
+<a name="example-response-(201-created)"></a>
 
-<a name="✅-example-response"></a>
+<a name="example-response"></a>
 
-<a name="✅-example-response"></a>
+<a name="example-response"></a>
 
-## ✅ Example Response (201 Created)
+## Example Response (201 Created)
 ```json
 {
   "id": "emp_135",
@@ -229,23 +229,23 @@ Content-Type: application/json
 
 ---
 
-<a name="🔁-put-`employeesid`"></a>
+<a id="put-employeesid"></a>
 
-## 🔁 PUT `/employees/{id}`
+## PUT `/employees/{id}`
 
 Replace all fields for an employee (overwrite mode).
 
-#<a name="✅-example-request"></a>
+#<a name="example-request"></a>
 
-<a name="✅-example-request"></a>
+<a name="example-request"></a>
 
-<a name="✅-example-request"></a>
+<a name="example-request"></a>
 
-<a name="✅-example-request"></a>
+<a name="example-request"></a>
 
-<a name="✅-example-request"></a>
+<a name="example-request"></a>
 
-## ✅ Example Request
+## Example Request
 ```http
 PUT /employees/emp_135
 Authorization: Bearer YOUR_ACCESS_TOKEN
@@ -264,15 +264,15 @@ Content-Type: application/json
 }
 ```
 
-#<a name="✅-example-response"></a>
+#<a name="example-response"></a>
 
-<a name="✅-example-response"></a>
+<a name="example-response"></a>
 
-<a name="✅-example-response"></a>
+<a name="example-response"></a>
 
-<a name="✅-example-response"></a>
+<a name="example-response"></a>
 
-## ✅ Example Response
+## Example Response
 ```json
 {
   "message": "Employee record replaced."
@@ -281,23 +281,23 @@ Content-Type: application/json
 
 ---
 
-<a name="✏️-patch-`employeesid`"></a>
+<a id="patch-employeesid"></a>
 
-## ✏️ PATCH `/employees/{id}`
+## PATCH `/employees/{id}`
 
 Update one or more fields for an existing employee.
 
-#<a name="✅-example-request"></a>
+#<a name="example-request"></a>
 
-<a name="✅-example-request"></a>
+<a name="example-request"></a>
 
-<a name="✅-example-request"></a>
+<a name="example-request"></a>
 
-<a name="✅-example-request"></a>
+<a name="example-request"></a>
 
-<a name="✅-example-request"></a>
+<a name="example-request"></a>
 
-## ✅ Example Request
+## Example Request
 ```http
 PATCH /employees/emp_135
 Authorization: Bearer YOUR_ACCESS_TOKEN
@@ -309,15 +309,15 @@ Content-Type: application/json
 }
 ```
 
-#<a name="✅-example-response"></a>
+#<a name="example-response"></a>
 
-<a name="✅-example-response"></a>
+<a name="example-response"></a>
 
-<a name="✅-example-response"></a>
+<a name="example-response"></a>
 
-<a name="✅-example-response"></a>
+<a name="example-response"></a>
 
-## ✅ Example Response
+## Example Response
 ```json
 {
   "message": "Employee record updated."
@@ -326,17 +326,17 @@ Content-Type: application/json
 
 ---
 
-<a name="🏢-get-`departments`"></a>
+<a id="get-departments"></a>
 
-## 🏢 GET `/departments`
+## GET `/departments`
 
 Retrieve a list of departments.
 
-#<a name="✅-response"></a>
+#<a name="response"></a>
 
-<a name="✅-response"></a>
+<a name="response"></a>
 
-## ✅ Response
+## Response
 ```json
 [
   "Engineering",
@@ -349,17 +349,17 @@ Retrieve a list of departments.
 
 ---
 
-<a name="🌍-get-`locations`"></a>
+<a id="get-locations"></a>
 
-## 🌍 GET `/locations`
+## GET `/locations`
 
 Retrieve a list of office locations.
 
-#<a name="✅-response"></a>
+#<a name="response"></a>
 
-<a name="✅-response"></a>
+<a name="response"></a>
 
-## ✅ Response
+## Response
 ```json
 [
   "London",
@@ -380,6 +380,6 @@ Retrieve a list of office locations.
 | Code | Meaning           | Sample Response |
 |------|-------------------|-----------------|
 | 400  | Bad request       | `{ "error": "Missing field: email" }` |
-| 401  | Unauthorized      | `{ "error": "Invalid or missing token" }` |
-| 404  | Not found         | `{ "error": "Employee not found" }` |
+| 401  | Unauthorised      | `{ "error": "Invalid or missing token" }` |
+| 404  | Resource not found | `{ "error": "Employee not found" }` |
 | 500  | Server error      | `{ "error": "Unexpected error occurred" }` |
