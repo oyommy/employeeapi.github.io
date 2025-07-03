@@ -18,7 +18,7 @@
 
 # Employee Directory API
 
-The **Employee Directory API** enables internal teams and systems to retrieve, create, and manage employee records. This is intended for internal use only.
+The **Employee Directory API** enables internal teams to retrieve, create, and manage employee records. This is intended for internal use only.
 
 ---
 
@@ -59,7 +59,7 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 
 Retrieve a paginated list of employees.
 
-#<a id="query-parameters"></a>
+<a id="query-parameters"></a>
 
 ## Query Parameters
 
@@ -118,7 +118,7 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
       "email": "amina.yusuf@example.com",
       "title": "DevOps Engineer",
       "department": "Infrastructure",
-      "location": "Lagos"
+      "location": "Stoke"
     }
   ]
 }
@@ -371,7 +371,7 @@ Retrieve a list of office locations.
 
 ---
 
-<a id="common-error-responses"></a> test
+<a id="common-error-responses"></a> 
 
 [<a name="❗-common-error-responses"></a>]: # 
 
