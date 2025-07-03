@@ -300,7 +300,7 @@ Retrieve a list of office locations.
 
 <a id="common-error-responses"></a> 
 
-## ❗ Common Error Responses
+## Common Error Responses
 
 | Code | Meaning           | Sample Response |
 |------|-------------------|-----------------|
