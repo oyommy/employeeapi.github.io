@@ -42,7 +42,13 @@ curl -X GET https://api.employeedir.com/v1/employees \
   -H "Authorization: Bearer <your_token>"
 
 ```
-
+### Example (JavaScript)
+```
+const resp = await fetch('https://api.company.com/v1/employees?page=1&limit=2', {
+  headers: { 'Authorization': `Bearer ${token}` }
+});
+console.log(await resp.json());
+```
 ---
 
 <a id="endpoints-summary"></a>
