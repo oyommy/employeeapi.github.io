@@ -1,6 +1,6 @@
 
 <div style="position: fixed; top: 100px; right: 20px; background: #f9f9f9; padding: 10px; border: 1px solid #ccc; width: 260px; z-index: 1000;">
-  <strong>📚 Table of Contents</strong>
+  <strong>On this page</strong>
   <ul>
     <li><a href="#authentication">Authentication</a></li>
     <li><a href="#endpoints-summary">Endpoints Summary</a></li>
@@ -52,6 +52,8 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 ---
 
 <a name="📥-get-`employees`"></a>
+
+[<a name="📥-get-`employees`"></a>]: # 
 
 ## 📥 GET `/employees`
 
@@ -369,7 +371,9 @@ Retrieve a list of office locations.
 
 ---
 
-<a name="❗-common-error-responses"></a>
+<a id="common-error-responses"></a> test
+
+[<a name="❗-common-error-responses"></a>]: # 
 
 ## ❗ Common Error Responses
 
