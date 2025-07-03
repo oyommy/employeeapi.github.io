@@ -20,6 +20,12 @@
 
 The **Employee Directory API** enables internal teams to retrieve, create, and manage employee records. This is intended for internal use only.
 
+## Base URL
+`https://api.employeedir.com/v1`
+
+All endpoints listed below are relative to this base URL.  
+API versioning is handled via the URL path.
+
 ---
 
 <a id="authentication"></a>
@@ -29,8 +35,12 @@ The **Employee Directory API** enables internal teams to retrieve, create, and m
 All endpoints require a Bearer token from the internal Auth Service.
 
 **Header Format:**
-```http
-Authorization: Bearer YOUR_ACCESS_TOKEN
+
+### Example (cURL)
+```bash
+curl -X GET https://api.yourdomain.com/v1/employees \
+  -H "Authorization: Bearer <your_token>"
+
 ```
 
 ---
@@ -61,24 +71,15 @@ Retrieve a paginated list of employees.
 
 <a id="query-parameters"></a>
 
-## Query Parameters
+### Query Parameters
 
-| Name       | Type   | Description                    |
-|------------|--------|--------------------------------|
-| `page`     | int    | Page number (default: 1)        |
-| `limit`    | int    | Results per page (default: 20) |
-| `department` | string | Filter by department          |
-| `location` | string | Filter by location             |
+| Parameter  | Type   | Required | Description                                       |
+|------------|--------|----------|---------------------------------------------------|
+| `page`       | int    | No       | Page number to retrieve                          |
+| `limit`     | int    | No       | Number of employees per page                     |
+| `department` | string | No       | Filter by department name (case-insensitive)     |
+| `location`   | string | No       | Filter by office location                        |
 
-#<a name="✅-example-request"></a>
-
-<a name="✅-example-request"></a>
-
-<a name="✅-example-request"></a>
-
-<a name="✅-example-request"></a>
-
-<a name="✅-example-request"></a>
 
 ## Example Request
 
@@ -86,14 +87,6 @@ Retrieve a paginated list of employees.
 GET /employees?page=1&limit=2
 Authorization: Bearer YOUR_ACCESS_TOKEN
 ```
-
-#<a name="✅-example-response"></a>
-
-<a name="✅-example-response"></a>
-
-<a name="✅-example-response"></a>
-
-<a name="✅-example-response"></a>
 
 ## Example Response
 ```json
@@ -104,18 +97,18 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
   "data": [
     {
       "id": "emp_001",
-      "first_name": "Victor",
-      "last_name": "Adedokun",
-      "email": "victor.adedokun@example.com",
-      "title": "Senior Technical Writer",
+      "first_name": "Jon",
+      "last_name": "Doe",
+      "email": "jon.doe@example.com",
+      "title": "Developer",
       "department": "Documentation",
       "location": "Glasgow"
     },
     {
       "id": "emp_002",
-      "first_name": "Amina",
-      "last_name": "Yusuf",
-      "email": "amina.yusuf@example.com",
+      "first_name": "Jane",
+      "last_name": "Bloggs",
+      "email": "jane.bloggs@example.com",
       "title": "DevOps Engineer",
       "department": "Infrastructure",
       "location": "Stoke"
@@ -123,6 +116,12 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
   ]
 }
 ```
+
+### Pagination Info
+
+- `page`: Current page number
+- `limit`: Max results per page
+- `total`: Total matching employees
 
 ---
 
@@ -132,15 +131,6 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 
 Retrieve full details for one employee.
 
-#<a name="✅-example-request"></a>
-
-<a name="✅-example-request"></a>
-
-<a name="✅-example-request"></a>
-
-<a name="✅-example-request"></a>
-
-<a name="✅-example-request"></a>
 
 ## Example Request
 ```http
@@ -148,22 +138,15 @@ GET /employees/emp_001
 Authorization: Bearer YOUR_ACCESS_TOKEN
 ```
 
-#<a name="✅-example-response"></a>
-
-<a name="✅-example-response"></a>
-
-<a name="✅-example-response"></a>
-
-<a name="✅-example-response"></a>
 
 ## Example Response
 ```json
 {
   "id": "emp_001",
-  "first_name": "Victor",
-  "last_name": "Adedokun",
-  "email": "victor.adedokun@example.com",
-  "title": "Senior Technical Writer",
+  "first_name": "Jon",
+  "last_name": "Doe",
+  "email": "jon.doe@example.com",
+  "title": "Technical Writer",
   "phone": "+44 701 234 5678",
   "manager_id": "emp_099",
   "department": "Documentation",
@@ -174,21 +157,12 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 
 ---
 
-<a name="➕-post-`employees`"></a>
+<a id="post-`employees`"></a>
 
 ## POST `/employees`
 
 Create a new employee.
 
-#<a name="✅-example-request"></a>
-
-<a name="✅-example-request"></a>
-
-<a name="✅-example-request"></a>
-
-<a name="✅-example-request"></a>
-
-<a name="example-request"></a>
 
 ## Example Request
 ```http
@@ -209,15 +183,6 @@ Content-Type: application/json
 }
 ```
 
-#<a name="example-response"></a>
-
-<a name="example-response"></a>
-
-<a name="example-response-(201-created)"></a>
-
-<a name="example-response"></a>
-
-<a name="example-response"></a>
 
 ## Example Response (201 Created)
 ```json
@@ -235,15 +200,6 @@ Content-Type: application/json
 
 Replace all fields for an employee (overwrite mode).
 
-#<a name="example-request"></a>
-
-<a name="example-request"></a>
-
-<a name="example-request"></a>
-
-<a name="example-request"></a>
-
-<a name="example-request"></a>
 
 ## Example Request
 ```http
@@ -264,13 +220,6 @@ Content-Type: application/json
 }
 ```
 
-#<a name="example-response"></a>
-
-<a name="example-response"></a>
-
-<a name="example-response"></a>
-
-<a name="example-response"></a>
 
 ## Example Response
 ```json
@@ -287,15 +236,6 @@ Content-Type: application/json
 
 Update one or more fields for an existing employee.
 
-#<a name="example-request"></a>
-
-<a name="example-request"></a>
-
-<a name="example-request"></a>
-
-<a name="example-request"></a>
-
-<a name="example-request"></a>
 
 ## Example Request
 ```http
@@ -308,14 +248,6 @@ Content-Type: application/json
   "location": "London"
 }
 ```
-
-#<a name="example-response"></a>
-
-<a name="example-response"></a>
-
-<a name="example-response"></a>
-
-<a name="example-response"></a>
 
 ## Example Response
 ```json
@@ -332,9 +264,7 @@ Content-Type: application/json
 
 Retrieve a list of departments.
 
-#<a name="response"></a>
 
-<a name="response"></a>
 
 ## Response
 ```json
@@ -355,9 +285,6 @@ Retrieve a list of departments.
 
 Retrieve a list of office locations.
 
-#<a name="response"></a>
-
-<a name="response"></a>
 
 ## Response
 ```json
@@ -372,8 +299,6 @@ Retrieve a list of office locations.
 ---
 
 <a id="common-error-responses"></a> 
-
-[<a name="❗-common-error-responses"></a>]: # 
 
 ## ❗ Common Error Responses
 
