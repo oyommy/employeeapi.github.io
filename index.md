@@ -38,7 +38,7 @@ All endpoints require a Bearer token from the internal Auth Service.
 
 ### Example (cURL)
 ```bash
-curl -X GET https://api.yourdomain.com/v1/employees \
+curl -X GET https://api.employeedir.com/v1/employees \
   -H "Authorization: Bearer <your_token>"
 
 ```
