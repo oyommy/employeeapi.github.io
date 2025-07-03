@@ -1,8 +1,28 @@
+
+<div style="position: fixed; top: 100px; right: 20px; background: #f9f9f9; padding: 10px; border: 1px solid #ccc; width: 260px; z-index: 1000;">
+  <strong>📚 Table of Contents</strong>
+  <ul>
+    <li><a href="#authentication">Authentication</a></li>
+    <li><a href="#endpoints-summary">Endpoints Summary</a></li>
+    <li><a href="#get-employees">GET /employees</a></li>
+    <li><a href="#get-employeesid">GET /employees/{id}</a></li>
+    <li><a href="#post-employees">POST /employees</a></li>
+    <li><a href="#put-employeesid">PUT /employees/{id}</a></li>
+    <li><a href="#patch-employeesid">PATCH /employees/{id}</a></li>
+    <li><a href="#get-departments">GET /departments</a></li>
+    <li><a href="#get-locations">GET /locations</a></li>
+    <li><a href="#common-error-responses">Error Responses</a></li>
+  </ul>
+</div>
+
+
 # 📘 Employee Directory API
 
 The **Employee Directory API** enables internal teams and systems to retrieve, create, and manage employee records. This is intended for internal use only.
 
 ---
+
+<a name="🔐-authentication"></a>
 
 ## 🔐 Authentication
 
@@ -14,6 +34,8 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 ```
 
 ---
+
+<a name="📇-endpoints-summary"></a>
 
 ## 📇 Endpoints Summary
 
@@ -29,11 +51,15 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 
 ---
 
+<a name="📥-get-`employees`"></a>
+
 ## 📥 GET `/employees`
 
 Retrieve a paginated list of employees.
 
-### Query Parameters
+#<a name="query-parameters"></a>
+
+## Query Parameters
 
 | Name       | Type   | Description                    |
 |------------|--------|--------------------------------|
@@ -42,14 +68,32 @@ Retrieve a paginated list of employees.
 | `department` | string | Filter by department          |
 | `location` | string | Filter by location             |
 
-### ✅ Example Request
+#<a name="✅-example-request"></a>
+
+<a name="✅-example-request"></a>
+
+<a name="✅-example-request"></a>
+
+<a name="✅-example-request"></a>
+
+<a name="✅-example-request"></a>
+
+## ✅ Example Request
 
 ```http
 GET /employees?page=1&limit=2
 Authorization: Bearer YOUR_ACCESS_TOKEN
 ```
 
-### ✅ Example Response
+#<a name="✅-example-response"></a>
+
+<a name="✅-example-response"></a>
+
+<a name="✅-example-response"></a>
+
+<a name="✅-example-response"></a>
+
+## ✅ Example Response
 ```json
 {
   "page": 1,
@@ -80,17 +124,37 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 
 ---
 
+<a name="🔍-get-`employeesid`"></a>
+
 ## 🔍 GET `/employees/{id}`
 
 Retrieve full details for one employee.
 
-### ✅ Example Request
+#<a name="✅-example-request"></a>
+
+<a name="✅-example-request"></a>
+
+<a name="✅-example-request"></a>
+
+<a name="✅-example-request"></a>
+
+<a name="✅-example-request"></a>
+
+## ✅ Example Request
 ```http
 GET /employees/emp_001
 Authorization: Bearer YOUR_ACCESS_TOKEN
 ```
 
-### ✅ Example Response
+#<a name="✅-example-response"></a>
+
+<a name="✅-example-response"></a>
+
+<a name="✅-example-response"></a>
+
+<a name="✅-example-response"></a>
+
+## ✅ Example Response
 ```json
 {
   "id": "emp_001",
@@ -108,11 +172,23 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 
 ---
 
+<a name="➕-post-`employees`"></a>
+
 ## ➕ POST `/employees`
 
 Create a new employee.
 
-### ✅ Example Request
+#<a name="✅-example-request"></a>
+
+<a name="✅-example-request"></a>
+
+<a name="✅-example-request"></a>
+
+<a name="✅-example-request"></a>
+
+<a name="✅-example-request"></a>
+
+## ✅ Example Request
 ```http
 POST /employees
 Authorization: Bearer YOUR_ACCESS_TOKEN
@@ -131,7 +207,17 @@ Content-Type: application/json
 }
 ```
 
-### ✅ Example Response (201 Created)
+#<a name="✅-example-response"></a>
+
+<a name="✅-example-response"></a>
+
+<a name="✅-example-response-(201-created)"></a>
+
+<a name="✅-example-response"></a>
+
+<a name="✅-example-response"></a>
+
+## ✅ Example Response (201 Created)
 ```json
 {
   "id": "emp_135",
@@ -141,11 +227,23 @@ Content-Type: application/json
 
 ---
 
+<a name="🔁-put-`employeesid`"></a>
+
 ## 🔁 PUT `/employees/{id}`
 
 Replace all fields for an employee (overwrite mode).
 
-### ✅ Example Request
+#<a name="✅-example-request"></a>
+
+<a name="✅-example-request"></a>
+
+<a name="✅-example-request"></a>
+
+<a name="✅-example-request"></a>
+
+<a name="✅-example-request"></a>
+
+## ✅ Example Request
 ```http
 PUT /employees/emp_135
 Authorization: Bearer YOUR_ACCESS_TOKEN
@@ -164,7 +262,15 @@ Content-Type: application/json
 }
 ```
 
-### ✅ Example Response
+#<a name="✅-example-response"></a>
+
+<a name="✅-example-response"></a>
+
+<a name="✅-example-response"></a>
+
+<a name="✅-example-response"></a>
+
+## ✅ Example Response
 ```json
 {
   "message": "Employee record replaced."
@@ -173,11 +279,23 @@ Content-Type: application/json
 
 ---
 
+<a name="✏️-patch-`employeesid`"></a>
+
 ## ✏️ PATCH `/employees/{id}`
 
 Update one or more fields for an existing employee.
 
-### ✅ Example Request
+#<a name="✅-example-request"></a>
+
+<a name="✅-example-request"></a>
+
+<a name="✅-example-request"></a>
+
+<a name="✅-example-request"></a>
+
+<a name="✅-example-request"></a>
+
+## ✅ Example Request
 ```http
 PATCH /employees/emp_135
 Authorization: Bearer YOUR_ACCESS_TOKEN
@@ -189,7 +307,15 @@ Content-Type: application/json
 }
 ```
 
-### ✅ Example Response
+#<a name="✅-example-response"></a>
+
+<a name="✅-example-response"></a>
+
+<a name="✅-example-response"></a>
+
+<a name="✅-example-response"></a>
+
+## ✅ Example Response
 ```json
 {
   "message": "Employee record updated."
@@ -198,11 +324,17 @@ Content-Type: application/json
 
 ---
 
+<a name="🏢-get-`departments`"></a>
+
 ## 🏢 GET `/departments`
 
 Retrieve a list of departments.
 
-### ✅ Response
+#<a name="✅-response"></a>
+
+<a name="✅-response"></a>
+
+## ✅ Response
 ```json
 [
   "Engineering",
@@ -215,11 +347,17 @@ Retrieve a list of departments.
 
 ---
 
+<a name="🌍-get-`locations`"></a>
+
 ## 🌍 GET `/locations`
 
 Retrieve a list of office locations.
 
-### ✅ Response
+#<a name="✅-response"></a>
+
+<a name="✅-response"></a>
+
+## ✅ Response
 ```json
 [
   "London",
@@ -230,6 +368,8 @@ Retrieve a list of office locations.
 ```
 
 ---
+
+<a name="❗-common-error-responses"></a>
 
 ## ❗ Common Error Responses
 
