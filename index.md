@@ -190,7 +190,7 @@ Content-Type: application/json
 ```
 
 
-## Example Response (201 Created)
+## Example Response
 ```json
 {
   "id": "emp_135",
